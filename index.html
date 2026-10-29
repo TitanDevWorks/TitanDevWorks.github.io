@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bundestag RP – Webportal</title>
+<meta name="robots" content="noindex">
+<noscript><meta http-equiv="refresh" content="0; url=https://bundestag-rp.duckdns.org/"></noscript>
+<style>
+  :root { color-scheme: light dark; --papier: #F6F4EF; --tinte: #141414; --grau: #5c5a55; --linie: #d9d5cc; }
+  @media (prefers-color-scheme: dark) { :root { --papier: #141414; --tinte: #F6F4EF; --grau: #a7a39b; --linie: #33312d; } }
+  body { margin: 0; background: var(--papier); color: var(--tinte); font: 16px/1.5 Georgia, "Times New Roman", serif; }
+  main { max-width: 34rem; margin: 0 auto; padding: 4rem 1rem; }
+  p.kopf { font: 600 .75rem/1 system-ui, sans-serif; letter-spacing: .12em; text-transform: uppercase; color: var(--grau);
+           border-bottom: 1px solid var(--linie); padding-bottom: .75rem; margin: 0 0 1.5rem; }
+  h1 { font-size: 1.75rem; font-weight: 600; margin: 0 0 .5rem; }
+  a { color: inherit; }
+  p.klein { font: .875rem/1.5 system-ui, sans-serif; color: var(--grau); }
+</style>
+</head>
+<body>
+<main>
+  <p class="kopf">Bundestag RP</p>
+  <h1>Weiter zum Webportal …</h1>
+  <p>Das Portal ist umgezogen. Falls die Weiterleitung nicht klappt: <a id="ziel" href="https://bundestag-rp.duckdns.org/">bundestag-rp.duckdns.org</a></p>
+  <p class="klein">Diese Seite auf GitHub Pages leitet nur weiter, sie speichert nichts.</p>
+</main>
+<script>
+  // Einzige Stelle mit der Portaladresse (Quelle: deploy/pages/ im Spielrepo). Pfad, Suche und Anker bleiben erhalten,
+  // damit alte Links wie /parteien oder /drucksachen/21-12 weiter funktionieren (404.html ist dieselbe Seite).
+  var ZIEL = 'https://bundestag-rp.duckdns.org';
+  var l = window.location;
+  window.location.replace(ZIEL + l.pathname + l.search + l.hash);
+</script>
+</body>
+</html>
